@@ -1,17 +1,10 @@
 public class Main
 {
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) throws InterruptedException {
 
-        double numerator;
-        double denominator;
-        double error;
-        double proportional;
-        double integral;
-        double derivative;
         double pidValue;
         double errorSum;
-        int n = 0;
+        boolean loop;
         double lastError = 0;
 
         //TIMER
@@ -20,9 +13,14 @@ public class Main
         Sensor sensor2 = new Sensor(2);
         Sensor sensor3 = new Sensor(3);
 
+        sensor1.setDistance(-1);
+        sensor2.setDistance(0);
+        sensor3.setDistance(1);
 
-        Distance distance1 = new Distance();
-        Distance distance2 = new Distance();
+        SensorArray sensorArray = new SensorArray();
+        sensorArray.addSensor(sensor1);
+        sensorArray.addSensor(sensor2);
+        sensorArray.addSensor(sensor3);
 
         //Start number test
         sensor1.setSensorReading(1);
@@ -33,10 +31,14 @@ public class Main
         sensor1.setPinNumber(2);
         sensor1.setPinNumber(3);
         //End number test
+    
+        sensorArray.pidValue();
+        while (loop = true)
+        {
 
-        numerator = ((-1 * distance1.getDistance()) * sensor1.getSensorReading() + 0 * sensor2.getSensorReading() + distance2.getDistance() * sensor3.getSensorReading());
-        denominator = sensor1.getSensorReading() + sensor2.getSensorReading() + sensor3.getSensorReading();
-        error = numerator / denominator;
+            System.out.println(sensorArray.pidValue());
+            Thread.sleep(500);
+        }
 
 
 
