@@ -23,15 +23,15 @@ public class Main
         sensorArray.addSensor(sensor3);
 
         //Start number test
-        sensor1.setSensorReading(1);
-        sensor2.setSensorReading(2);
-        sensor3.setSensorReading(3);
+        sensor1.setSensorReading(0);
+        sensor2.setSensorReading(1);
+        sensor3.setSensorReading(0);
 
         sensor1.setPinNumber(1);
         sensor1.setPinNumber(2);
         sensor1.setPinNumber(3);
         //End number test
-    
+
         sensorArray.pidValue();
         while (loop = true)
         {

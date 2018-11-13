@@ -12,12 +12,13 @@ public class SensorArray
     ArrayList<Sensor> sensorList = new ArrayList<>();
 
     public SensorArray(){
-        double errorSum = 0;
-        double lastError = 0;
-        float kp = 0;
-        float ki = 0;
-        float kd = 0;
-        float error = 0;
+        errorSum = 0;
+        lastError = 0;
+
+        kp = 2;
+        ki = (float) .5;
+        kd = (float) .7;
+        error = 0;
     }
 
     public void addSensor(Sensor sensor){
